@@ -1,3 +1,4 @@
+// import { useEffect } from "react";
 
 
 const Task = ({task, done, markDone}) => {
@@ -11,16 +12,19 @@ const Task = ({task, done, markDone}) => {
         background: 'transparent',
         display: 'inline',
         color: 'inherit',
+        cursor: 'pointer'
     };
+
+  
     return (
         <p style={paragraphStyle}>
             <button
                 style={buttonStyle}
-                onClick={done ? null : markDone}
+                onClick={markDone}
             >
-                {done ? 'V ' : 'O '}
+                {done ? `V ${task}` : `O ${task}`}
             </button>
-            {task}
+            
         </p>
     )
   
